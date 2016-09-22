@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-#
 
 # import modules used here -- sys is a very standard one
 import sys, argparse, logging, os
@@ -11,25 +10,42 @@ def main(args, loglevel):
   #logging.debug("Your Argument: %s" % args.argument)
   logging.info("Xecle: rethinking spreadsheet")
 
-  cwd = os.path.dirname(os.path.realpath(__file__))
-  
-  containers = {
-    'descjop': 'xecle_descjop',
-  }
-  
-  exit_code = call([
-    "docker",
-    "run",
-    "-ti",
-    "-v", "%s/app:/usr/src/app" % cwd,
-    "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
-    "-e", "DISPLAY=unix$DISPLAY",
-    "--name", containers['descjop'],
-    "clojure:descjop"
-  ])
-  if exit_code != 0:
-    call(["docker", "start", "-ia", containers['descjop']])
-      
+  print "[1] Code and develop"
+  print "[2] Build container image (if you're first time here)"
+  print "[3] Deploy executable packages"
+
+  choice = float(input("What would you like to do? ") or 1)
+
+  image = "clojure:descjop"
+
+  if choice == 1:
+    cwd = os.path.dirname(os.path.realpath(__file__))
+
+    containers = {
+      'descjop': 'xecle_descjop',
+    }
+
+    exit_code = call(["docker", "start", "-ia", containers['descjop']])
+    if exit_code != 0:
+      call([
+        "docker",
+        "run",
+        "-ti",
+        "-v", "%s/app:/usr/src/app" % cwd,
+        "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
+        "-e", "DISPLAY=unix$DISPLAY",
+        "--name", containers['descjop'],
+        image
+      ])
+
+  # Build container image
+  elif choice == 2:
+    call(["docker", "build", "-t", image, '.'])
+
+  # Deploy executables
+  elif choice == 3:
+    print "Not done yet"
+
 
 # Standard boilerplate to call the main() function to begin
 # the program.
@@ -50,11 +66,11 @@ if __name__ == '__main__':
     action="store_true"
   )
   args = parser.parse_args()
-  
+
   # Setup logging
   if args.verbose:
     loglevel = logging.DEBUG
   else:
     loglevel = logging.INFO
-  
+
   main(args, loglevel)
