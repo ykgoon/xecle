@@ -21,21 +21,28 @@ def main(args, loglevel):
   if choice == 1:
     cwd = os.path.dirname(os.path.realpath(__file__))
 
+    print "Run `electron app/dev --enable-logging` to code."
+
     containers = {
       'descjop': 'xecle_descjop',
     }
 
+    call(["xhost", "+"])
+
     exit_code = call(["docker", "start", "-ia", containers['descjop']])
     if exit_code != 0:
+      print "Creating new container..."
       call([
         "docker",
         "run",
         "-ti",
         "-v", "%s/app:/usr/src/app" % cwd,
         "-v", "/tmp/.X11-unix:/tmp/.X11-unix",
-        "-e", "DISPLAY=unix$DISPLAY",
+        "-v", "/var/run/dbus:/var/run/dbus",
+        "-e", "DISPLAY=unix:0",
+        "-e", "XAUTHORITY=/.Xauthority",
         "--name", containers['descjop'],
-        image
+        image,
       ])
 
   # Build container image

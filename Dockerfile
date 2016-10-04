@@ -17,7 +17,7 @@ RUN set -ex \
     gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
   done
 
-ENV NPM_CONFIG_LOGLEVEL info
+ENV NPM_CONFIG_LOGLEVEL info  
 ENV NODE_VERSION 6.5.0
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" \
@@ -28,6 +28,26 @@ RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
   && rm "node-v$NODE_VERSION-linux-x64.tar.xz" SHASUMS256.txt.asc SHASUMS256.txt \
 && ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
+# https://hub.docker.com/r/jess/chromium/~/dockerfile/
+RUN apt-get update
+RUN apt-get install -y \
+    chromium \
+    chromium-l10n \
+    fonts-liberation \
+    fonts-roboto \
+    hicolor-icon-theme \
+    libcanberra-gtk-module \
+    libexif-dev \
+    libgl1-mesa-dri \
+    libgl1-mesa-glx \
+    libpango1.0-0 \
+    libv4l-0
+
+RUN rm -rf /var/lib/apt/lists/*
+
 RUN npm install -g grunt-cli electron
+
+COPY entrypoint.sh /tmp/entrypoint.sh
+ENTRYPOINT ["/tmp/entrypoint.sh"]
 
 WORKDIR /usr/src/app
