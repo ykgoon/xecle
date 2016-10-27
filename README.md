@@ -8,15 +8,16 @@ Xecle is about rethinking how spreadsheet works.
 ### Setup
 
 1. Install *nodejs*
-2. Install *leiningen*
-3. `npm install -g grunt-cli electron`
-4. `lein deps`
-5. `lein descjop-externs`
+2. Install *nodeenv* (optional)
+3. Install *leiningen*
+4. `npm install -g grunt-cli electron`
+5. `lein deps`
+6. `lein descjop-externs`
 
 ### Development mode
 
-1. `lein descjop-figwheel`
-2. `electron app/dev --enable-logging`
+1. `lein descjop-figwheel` to compile Javascript files
+2. `electron app/dev` to launch desktop application
 
 
 ### Production mode
