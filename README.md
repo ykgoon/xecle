@@ -5,14 +5,23 @@ Xecle is about rethinking how spreadsheet works.
 
 ## Development
 
-`python run.py`, and go from there.
+### Setup
 
-### Requirements
+1. Install *nodejs*
+2. Install *leiningen*
+3. `npm install -g grunt-cli electron`
+4. `lein deps`
+5. `lein descjop-externs`
 
-- Docker
+### Development mode
 
-Development requires *Docker*. Have it installed
-before running `run.py`.
+1. `lein descjop-figwheel`
+2. `electron app/dev --enable-logging`
+
+
+### Production mode
+
+1. `electron app/prod`
 
 
 ## Architecture
