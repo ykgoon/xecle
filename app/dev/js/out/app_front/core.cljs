@@ -1,6 +1,6 @@
 (ns app-front.core)
 
-(defonce app-state (atom {:message "Hello Minimum app world!"}))
+(defonce app-state (atom {:message "Xecle hello world"}))
 
 (defn mount-root [setting]
   (let [app (. js/document (getElementById "app"))]

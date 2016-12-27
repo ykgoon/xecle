@@ -3,7 +3,7 @@ goog.provide('app_front.core');
 goog.require('cljs.core');
 if(typeof app_front.core.app_state !== 'undefined'){
 } else {
-app_front.core.app_state = cljs.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"message","message",-406056002),"Hello Minimum app world!"], null));
+app_front.core.app_state = cljs.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"message","message",-406056002),"Xecle hello world"], null));
 }
 app_front.core.mount_root = (function app_front$core$mount_root(setting){
 var app = document.getElementById("app");

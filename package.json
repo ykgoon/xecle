@@ -8,5 +8,9 @@
         "closurecompiler-externs": "^1.0.4"
     },
     "license": "MIT",
-    "repository" : "http://github.com/ykgoon/xecle"
+    "repository": "http://github.com/ykgoon/xecle",
+    "dependencies": {
+        "handsontable": "^0.28.4",
+        "electron": "^1.4.1"
+    }
 }

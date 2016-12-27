@@ -9,8 +9,8 @@ Xecle is about rethinking how spreadsheet works.
 
 1. Install *nodejs*
 2. Install *nodeenv* (optional)
-3. Install *leiningen*
-4. `npm install -g grunt-cli electron`
+3. Install *leiningen* (Clojure)
+4. `npm install`
 5. `lein deps`
 6. `lein descjop-externs`
 
