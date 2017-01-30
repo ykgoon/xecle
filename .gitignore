@@ -8,10 +8,10 @@ target/*
 .lein-deps-sum
 .lein-repl-history
 .lein-plugins/*
-node_modules/*
+# node_modules/*
 *.iml
 *.ipr
 *.iws
-electron/*
+# electron/*
 *~
 env/*

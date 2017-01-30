@@ -5,12 +5,8 @@
     "devDependencies": {
         "grunt": "^1.0.0",
         "grunt-download-electron": "^2.1.4",
-        "closurecompiler-externs": "^1.0.4",
-        "electron": "1.4.7"
+        "closurecompiler-externs": "^1.0.4"
     },
     "license": "MIT",
-    "repository": "http://github.com/ykgoon/xecle",
-    "dependencies": {
-        "handsontable": "^0.28.4"
-    }
+    "repository": "http://github.com/ykgoon/xecle"
 }

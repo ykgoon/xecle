@@ -7,19 +7,20 @@ Xecle is about rethinking how spreadsheet works.
 
 ### Setup
 
-1. Install *nodejs*
-2. Install *leiningen*
-3. Install *nodeenv* (optional)
-4. Run `npm install -g electron`
-5. Run `lein deps`
-6. Run `lein descjop-externs`
+1. Install [*leiningen*](https://leiningen.org/#install)
+2. `pip install nodeenv`
+3. `. env/bin/active`
+4. `npm install electron -g --save-dev`
+5. `lein deps`
+6. `lein descjop-externs`
+
 
 ### Development mode
 
-1. `lein descjop-figwheel` to compile Javascript files
-2. `electron app/dev` to launch desktop application
-  1. *Before that* if you use `nodeenv`, run this first:
-  `. env/bin/active`
+1. `. env/bin/active`
+2. `lein descjop-figwheel` to compile project into Javascript
+3. `electron app/dev` to launch desktop application
+
 
 ### Production mode
 

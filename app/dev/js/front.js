@@ -1,7 +1,8 @@
 goog.addDependency("base.js", ['goog'], []);
 goog.addDependency("../cljs/core.js", ['cljs.core'], ['goog.string', 'goog.object', 'goog.string.StringBuffer', 'goog.array']);
 goog.addDependency("../app_front/conf.js", ['app_front.conf'], ['cljs.core']);
-goog.addDependency("../app_front/core.js", ['app_front.core'], ['cljs.core']);
+goog.addDependency("../handsontable.full.inc.js", ['cljsjs.handsontable'], []);
+goog.addDependency("../app_front/core.js", ['app_front.core'], ['cljs.core', 'cljsjs.handsontable']);
 goog.addDependency("../cljs/core/async/impl/protocols.js", ['cljs.core.async.impl.protocols'], ['cljs.core']);
 goog.addDependency("../cljs/core/async/impl/buffers.js", ['cljs.core.async.impl.buffers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
 goog.addDependency("../cljs/core/async/impl/dispatch.js", ['cljs.core.async.impl.dispatch'], ['cljs.core', 'cljs.core.async.impl.buffers', 'goog.async.nextTick']);
