@@ -7,7 +7,8 @@
                  [org.clojure/clojurescript "1.7.228" :exclusions [org.apache.ant/ant]]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [figwheel "0.4.0"]
-                 [cljsjs/handsontable "0.26.1-0"]]
+                 [cljsjs/handsontable "0.26.1-0"]
+                 [deraen/less4clj "0.6.2"]]
   :plugins [[lein-cljsbuild "1.1.3"]
             [lein-externs "0.1.6"]
             [lein-shell "0.4.1"]
@@ -147,4 +148,5 @@
                                                :output-wrapper true}}}}
   :figwheel {:http-server-root "public"
              :ring-handler figwheel-middleware/app
-             :server-port 3449})
+             :server-port 3449
+             :css-dirs ["resources/public/css"]})
