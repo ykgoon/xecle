@@ -7,7 +7,7 @@
   (let [app (. js/document (getElementById "app"))
         spreadsheet (array (array))
         table-options (js-obj "data" spreadsheet
-                              "minRows" 18
+                              "minRows" 32
                               "minCols" 12
                               "rowHeaders" true
                               "colHeaders" true
