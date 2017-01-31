@@ -8136,30 +8136,30 @@ cljs.core.not_empty = function(a) {
   return cljs.core.seq(a) ? a : null;
 };
 cljs.core.nil_iter = function cljs$core$nil_iter() {
-  "undefined" === typeof cljs.core.t_cljs$core9297 && (cljs.core.t_cljs$core9297 = function(b, c) {
+  "undefined" === typeof cljs.core.t_cljs$core13219 && (cljs.core.t_cljs$core13219 = function(b, c) {
     this.nil_iter = b;
-    this.meta9298 = c;
+    this.meta13220 = c;
     this.cljs$lang$protocol_mask$partition0$ = 393216;
     this.cljs$lang$protocol_mask$partition1$ = 0;
-  }, cljs.core.t_cljs$core9297.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
-    return new cljs.core.t_cljs$core9297(this.nil_iter, c);
-  }, cljs.core.t_cljs$core9297.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
-    return this.meta9298;
-  }, cljs.core.t_cljs$core9297.prototype.hasNext = function() {
+  }, cljs.core.t_cljs$core13219.prototype.cljs$core$IWithMeta$_with_meta$arity$2 = function(b, c) {
+    return new cljs.core.t_cljs$core13219(this.nil_iter, c);
+  }, cljs.core.t_cljs$core13219.prototype.cljs$core$IMeta$_meta$arity$1 = function(b) {
+    return this.meta13220;
+  }, cljs.core.t_cljs$core13219.prototype.hasNext = function() {
     return !1;
-  }, cljs.core.t_cljs$core9297.prototype.next = function() {
+  }, cljs.core.t_cljs$core13219.prototype.next = function() {
     return Error("No such element");
-  }, cljs.core.t_cljs$core9297.prototype.remove = function() {
+  }, cljs.core.t_cljs$core13219.prototype.remove = function() {
     return Error("Unsupported operation");
-  }, cljs.core.t_cljs$core9297.getBasis = function() {
-    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.with_meta(new cljs.core.Symbol(null, "nil-iter", "nil-iter", 1101030523, null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "arglists", "arglists", 1661989754), cljs.core.list(new cljs.core.Symbol(null, "quote", "quote", 1377916282, null), cljs.core.list(cljs.core.PersistentVector.EMPTY))], null)), new cljs.core.Symbol(null, "meta9298", "meta9298", 276733054, null)], 
+  }, cljs.core.t_cljs$core13219.getBasis = function() {
+    return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.with_meta(new cljs.core.Symbol(null, "nil-iter", "nil-iter", 1101030523, null), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "arglists", "arglists", 1661989754), cljs.core.list(new cljs.core.Symbol(null, "quote", "quote", 1377916282, null), cljs.core.list(cljs.core.PersistentVector.EMPTY))], null)), new cljs.core.Symbol(null, "meta13220", "meta13220", 1268311528, null)], 
     null);
-  }, cljs.core.t_cljs$core9297.cljs$lang$type = !0, cljs.core.t_cljs$core9297.cljs$lang$ctorStr = "cljs.core/t_cljs$core9297", cljs.core.t_cljs$core9297.cljs$lang$ctorPrWriter = function(b, c, d) {
-    return cljs.core._write(c, "cljs.core/t_cljs$core9297");
-  }, cljs.core.__GT_t_cljs$core9297 = function(b, c) {
-    return new cljs.core.t_cljs$core9297(b, c);
+  }, cljs.core.t_cljs$core13219.cljs$lang$type = !0, cljs.core.t_cljs$core13219.cljs$lang$ctorStr = "cljs.core/t_cljs$core13219", cljs.core.t_cljs$core13219.cljs$lang$ctorPrWriter = function(b, c, d) {
+    return cljs.core._write(c, "cljs.core/t_cljs$core13219");
+  }, cljs.core.__GT_t_cljs$core13219 = function(b, c) {
+    return new cljs.core.t_cljs$core13219(b, c);
   });
-  return new cljs.core.t_cljs$core9297(cljs$core$nil_iter, cljs.core.PersistentArrayMap.EMPTY);
+  return new cljs.core.t_cljs$core13219(cljs$core$nil_iter, cljs.core.PersistentArrayMap.EMPTY);
 };
 cljs.core.StringIter = function(a, b) {
   this.s = a;
@@ -19550,7 +19550,7 @@ app.core.Os = cljs.nodejs.require.call(null, "os");
 app.core._STAR_win_STAR_ = cljs.core.atom.call(null, null);
 app.core.app = app.core.Electron.app;
 app.core._main = function() {
-  app.core.crash_reporter.start(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "companyName", "companyName", 2030952346), "Your Company Name", new cljs.core.Keyword(null, "submitURL", "submitURL", -169159433), "http://example.com/"], null)));
+  app.core.crash_reporter.start(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "companyName", "companyName", 2030952346), "Xecle Foundation?", new cljs.core.Keyword(null, "submitURL", "submitURL", -169159433), "http://ykgoon.com/"], null)));
   cljs.nodejs.process.on("error", function(a) {
     return console.log(a);
   });

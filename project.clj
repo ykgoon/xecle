@@ -7,12 +7,12 @@
                  [org.clojure/clojurescript "1.7.228" :exclusions [org.apache.ant/ant]]
                  [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                  [figwheel "0.4.0"]
-                 [cljsjs/handsontable "0.26.1-0"]
-                 [deraen/less4clj "0.6.2"]]
+                 [cljsjs/handsontable "0.26.1-0"]]
   :plugins [[lein-cljsbuild "1.1.3"]
             [lein-externs "0.1.6"]
             [lein-shell "0.4.1"]
-            [lein-figwheel "0.5.0-SNAPSHOT" :exclusions [org.clojure/core.cache]]]
+            [lein-figwheel "0.5.0-SNAPSHOT" :exclusions [org.clojure/core.cache]]
+            [deraen/lein-less4j "0.6.2"]]
   :source-paths ["src_tools"]
   :hooks [leiningen.cljsbuild]
   :aliases {"descjop-help" ["new" "descjop" "help"]
@@ -34,7 +34,9 @@
             "descjop-externs-prod" ["do"
                                     ["externs" "prod-main" "app/prod/js/externs.js"]
                                     ["externs" "prod-front" "app/prod/js/externs_front.js"]]
-            "descjop-figwheel" ["trampoline" "figwheel" "dev-front"]
+            "descjop-figwheel" ["trampoline" "figwheel"
+                                "less4j" "auto"
+                                "dev-front"]
             "descjop-once" ["do"
                             ["cljsbuild" "once" "dev-main"]
                             ["cljsbuild" "once" "dev-front"]
@@ -146,7 +148,10 @@
                                                ;;:source-map "app/prod/js/test.js.map"
                                                :pretty-print true
                                                :output-wrapper true}}}}
+  :less {:source-paths  ["resources/public/css"]
+         :target-path   "app/dev/css"
+         :source-map true}
   :figwheel {:http-server-root "public"
              :ring-handler figwheel-middleware/app
              :server-port 3449
-             :css-dirs ["resources/public/css"]})
+             :css-dirs ["app/dev/css"]})
