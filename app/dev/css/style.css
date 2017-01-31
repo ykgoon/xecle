@@ -1389,4 +1389,13 @@ http://nicolasgallagher.com/micro-clearfix-hack/
     cursor: help;
 }
 
+body {
+  font-family: monospace;
+  color: #CCC;
+  background-color: #1B1B1B;
+}
+.handsontable th,
+.handsontable td {
+  background-color: #1B1B1B;
+}
 /*# sourceMappingURL=style.main.css.map */

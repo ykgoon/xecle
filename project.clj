@@ -34,9 +34,9 @@
             "descjop-externs-prod" ["do"
                                     ["externs" "prod-main" "app/prod/js/externs.js"]
                                     ["externs" "prod-front" "app/prod/js/externs_front.js"]]
-            "descjop-figwheel" ["trampoline" "figwheel"
-                                "less4j" "auto"
-                                "dev-front"]
+            "descjop-figwheel" ["do"
+                                ["trampoline" "figwheel" "dev-front"]
+                                ["less4j" "auto"]]
             "descjop-once" ["do"
                             ["cljsbuild" "once" "dev-main"]
                             ["cljsbuild" "once" "dev-front"]
