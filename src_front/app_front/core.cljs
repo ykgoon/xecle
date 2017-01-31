@@ -5,15 +5,13 @@
 
 (defn mount-root [setting]
   (let [app (. js/document (getElementById "app"))
-        spreadsheet (array
-                     (array "Sed" "Mauris" "Nam")
-                     (array 4 34 59)
-                     (array 8 4 43)
-                     (array 9 2 10))
+        spreadsheet (array (array))
         table-options (js-obj "data" spreadsheet
-                              "rowHeader" true
-                              "colHeader" true
-                              "dropdownMenu" true)]
+                              "minRows" 18
+                              "minCols" 12
+                              "rowHeaders" true
+                              "colHeaders" true
+                              "stretchH" "all")]
     (js/Handsontable app table-options)))
 
 (defn init! [setting]

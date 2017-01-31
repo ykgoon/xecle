@@ -1393,9 +1393,12 @@ body {
   font-family: monospace;
   color: #CCC;
   background-color: #1B1B1B;
+  overflow: hidden;
 }
-.handsontable th,
-.handsontable td {
+#app {
+  width: 100%;
+}
+.ht_master tr td {
   background-color: #1B1B1B;
 }
 /*# sourceMappingURL=style.main.css.map */

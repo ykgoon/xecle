@@ -8,9 +8,9 @@ app_front.core.app_state = cljs.core.atom.call(null,new cljs.core.PersistentArra
 }
 app_front.core.mount_root = (function app_front$core$mount_root(setting){
 var app = document.getElementById("app");
-var spreadsheet = [["Sed","Mauris","Nam"],[(4),(34),(59)],[(8),(4),(43)],[(9),(2),(10)]];
-var table_options = (function (){var obj20903 = {"data":spreadsheet,"rowHeader":true,"colHeader":true,"dropdownMenu":true};
-return obj20903;
+var spreadsheet = [[]];
+var table_options = (function (){var obj20532 = {"data":spreadsheet,"minRows":(18),"minCols":(12),"rowHeaders":true,"colHeaders":true,"stretchH":"all"};
+return obj20532;
 })();
 return Handsontable(app,table_options);
 });

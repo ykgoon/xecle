@@ -12,7 +12,8 @@
             [lein-externs "0.1.6"]
             [lein-shell "0.4.1"]
             [lein-figwheel "0.5.0-SNAPSHOT" :exclusions [org.clojure/core.cache]]
-            [deraen/lein-less4j "0.6.2"]]
+            [deraen/lein-less4j "0.6.2"]
+            [lein-pdo "0.1.1"]]
   :source-paths ["src_tools"]
   :hooks [leiningen.cljsbuild]
   :aliases {"descjop-help" ["new" "descjop" "help"]
@@ -34,9 +35,9 @@
             "descjop-externs-prod" ["do"
                                     ["externs" "prod-main" "app/prod/js/externs.js"]
                                     ["externs" "prod-front" "app/prod/js/externs_front.js"]]
-            "descjop-figwheel" ["do"
-                                ["trampoline" "figwheel" "dev-front"]
-                                ["less4j" "auto"]]
+            "descjop-figwheel" ["pdo"
+                                ;; ["less4j" "auto"]
+                                ["trampoline" "figwheel" "dev-front"]]
             "descjop-once" ["do"
                             ["cljsbuild" "once" "dev-main"]
                             ["cljsbuild" "once" "dev-front"]
@@ -44,10 +45,12 @@
                             ["cljsbuild" "once" "prod-front"]]
             "descjop-once-dev" ["do"
                                 ["cljsbuild" "once" "dev-main"]
-                                ["cljsbuild" "once" "dev-front"]]
+                                ["cljsbuild" "once" "dev-front"]
+                                ["less4j" "once"]]
             "descjop-once-prod" ["do"
                                  ["cljsbuild" "once" "prod-main"]
-                                 ["cljsbuild" "once" "prod-front"]]}
+                                 ["cljsbuild" "once" "prod-front"]
+                                 ["less4j" "once"]]}
   :cljsbuild {:builds {:dev-main {:source-paths ["src"]
                                   :incremental true
                                   :jar true
