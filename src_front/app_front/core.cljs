@@ -12,7 +12,8 @@
                               "rowHeaders" true
                               "colHeaders" true
                               "stretchH" "all")]
-    (js/Handsontable app table-options)))
+    (js/Handsontable app table-options)
+    (*win*.BrowserWindow.maximize)))
 
 (defn init! [setting]
   (mount-root setting))

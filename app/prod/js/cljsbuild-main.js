@@ -19550,7 +19550,7 @@ app.core.Os = cljs.nodejs.require.call(null, "os");
 app.core._STAR_win_STAR_ = cljs.core.atom.call(null, null);
 app.core.app = app.core.Electron.app;
 app.core._main = function() {
-  app.core.crash_reporter.start(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "companyName", "companyName", 2030952346), "Xecle Foundation?", new cljs.core.Keyword(null, "submitURL", "submitURL", -169159433), "http://ykgoon.com/"], null)));
+  app.core.crash_reporter.start(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "companyName", "companyName", 2030952346), "Xecle Foundation", new cljs.core.Keyword(null, "submitURL", "submitURL", -169159433), "http://ykgoon.com/"], null)));
   cljs.nodejs.process.on("error", function(a) {
     return console.log(a);
   });

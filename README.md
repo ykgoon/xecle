@@ -18,8 +18,7 @@ Xecle is about rethinking how spreadsheet works.
 ### Development mode
 
 1. `. env/bin/active`
-2. `lein descjop-figwheel` to compile project into Javascript
-3. `electron app/dev` to launch desktop application
+2. `lein descjop-figwheel` to bring up app window running compiled Javascript
 
 
 ### Production mode

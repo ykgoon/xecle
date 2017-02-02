@@ -19584,7 +19584,8 @@ app_front.core = {};
 "undefined" === typeof app_front.core.app_state && (app_front.core.app_state = cljs.core.atom.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "message", "message", -406056002), "Xecle: rethinking spreadsheet"], null)));
 app_front.core.mount_root = function(a) {
   a = document.getElementById("app");
-  return Handsontable(a, {data:[5, 4, 6], rowHeader:!0, colHeader:!0, stretchH:"all"});
+  Handsontable(a, {data:[[]], minRows:32, minCols:12, rowHeaders:!0, colHeaders:!0, stretchH:"all"});
+  return win.BrowserWindow.maximize.call(null);
 };
 app_front.core.init_BANG_ = function(a) {
   return app_front.core.mount_root.call(null, a);
