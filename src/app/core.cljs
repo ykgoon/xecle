@@ -33,6 +33,9 @@
        (fn []
          (reset! *win* (BrowserWindow. (clj->js {:width 800 :height 600})))
 
+         ;; maximize window
+         (.maximize *win*.state)
+
          ;; when no optimize comment out
          (.loadURL @*win* (str "file://" (.resolve path (js* "__dirname") "../index.html")))
          ;; when no optimize uncomment

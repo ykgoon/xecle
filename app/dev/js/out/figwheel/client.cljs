@@ -22,19 +22,10 @@
                  :content args})
   args)
 
-(def autoload?
-  (if (utils/html-env?)
-    (fn []
-      (condp = (or (.getItem js/localStorage "figwheel_autoload") "true")
-        "true" true
-        "false" false))
-    (fn [] true)))
+(defonce autoload (atom true))
 
-(defn ^:export toggle-autoload []
-  (when (utils/html-env?)
-    (.setItem js/localStorage "figwheel_autoload" (not (autoload?)))
-    (utils/log :info
-               (str "Figwheel autoloading " (if (autoload?) "ON" "OFF")))))
+(defn ^:export toggle_autoload []
+  (swap! autoload not))
 
 (defn console-print [args]
   (.apply (.-log js/console) js/console (into-array args))
@@ -99,17 +90,14 @@
                (let [msg-hist (focus-msgs #{:files-changed :compile-warning} msg-hist')
                      msg-names (map :msg-name msg-hist)
                      msg (first msg-hist)]
-                 #_(.log js/console (prn-str msg))
-                 (if (autoload?)
+                 (when @autoload
+                     #_(.log js/console (prn-str msg))
                      (cond
                        (reload-file-state? msg-names opts)
                        (alts! [(reloading/reload-js-files opts msg) (timeout 1000)])
                        
                        (block-reload-file-state? msg-names opts)
-                       (utils/log :warn (str "Figwheel: Not loading code with warnings - " (-> msg :files first :file))))
-                     (do
-                       (utils/log :warn "Figwheel: code autoloading is OFF")
-                       (utils/log :info (str "Not loading: " (map :file (:files msg))))))
+                       (.warn js/console "Figwheel: Not loading code with warnings - " (-> msg :files first :file))))
                  (recur))))
     (fn [msg-hist] (put! ch msg-hist) msg-hist)))
 
@@ -189,6 +177,7 @@
           :compile-failed  (on-compile-fail msg)
           nil)))
 
+
 ;; this is seperate for live dev only
 (defn heads-up-plugin-msg-handler [opts msg-hist']
   (let [msg-hist (focus-msgs #{:files-changed :compile-warning :compile-failed} msg-hist')
@@ -197,8 +186,7 @@
     (go
      (cond
       (reload-file-state? msg-names opts)
-      (if (and (autoload?)
-               (:autoload opts))
+      (if (and @autoload (:autoload opts))
         (<! (heads-up/flash-loaded))
         (<! (heads-up/clear)))
      
@@ -284,8 +272,6 @@
                        (if (utils/html-env?) js/location.host "localhost:3449")
                        "/figwheel-ws")
    :load-warninged-code false
-
-   ;; :on-message identity
    
    :on-jsload default-on-jsload
    :before-jsload default-before-load
@@ -319,7 +305,7 @@
               :comp-fail-warning-plugin compile-fail-warning-plugin
               :css-reloader-plugin      css-reloader-plugin
               :repl-plugin      repl-plugin}
-        base  (if (not (utils/html-env?)) ;; we are in an html environment?
+       base  (if (not (utils/html-env?)) ;; we are in an html environment?
                (select-keys base [#_:enforce-project-plugin
                                   :file-reloader-plugin
                                   :comp-fail-warning-plugin
@@ -332,11 +318,6 @@
              (utils/html-env?))
       (assoc base :heads-up-display-plugin heads-up-plugin)
       base)))
-
-(defn add-message-watch [key callback]
-  (add-watch
-   socket/message-history-atom key
-   (fn [_ _ _ msg-hist] (callback (first msg-hist)))))
 
 (defn add-plugins [plugins system-options]
   (doseq [[k plugin] plugins]

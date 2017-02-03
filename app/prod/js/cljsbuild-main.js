@@ -19559,6 +19559,7 @@ app.core._main = function() {
   });
   return app.core.app.on("ready", function() {
     cljs.core.reset_BANG_.call(null, app.core._STAR_win_STAR_, new app.core.BrowserWindow(cljs.core.clj__GT_js.call(null, new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "width", "width", -384071477), 800, new cljs.core.Keyword(null, "height", "height", 1025178622), 600], null))));
+    app.core._STAR_win_STAR_.state.maximize();
     cljs.core.deref.call(null, app.core._STAR_win_STAR_).loadURL([cljs.core.str("file://"), cljs.core.str(app.core.path.resolve(__dirname, "../index.html"))].join(""));
     return cljs.core.deref.call(null, app.core._STAR_win_STAR_).on("closed", function() {
       return cljs.core.reset_BANG_.call(null, app.core._STAR_win_STAR_, null);
