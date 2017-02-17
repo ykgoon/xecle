@@ -20,6 +20,16 @@ Xecle is about rethinking how spreadsheet works.
 1. `. env/bin/active`
 2. `lein descjop-figwheel` to bring up app window running compiled Javascript
 
+#### CSS-compilation
+
+Styling is done in LESS, located in style.main.less (and corresponding
+minimized file).
+
+To compile it into CSS files, run `lein descjop-once-dev`.
+
+It's unfortunate that we can't yet pull off real-time compilation and see it
+right away, so we gotta run this before `lein descjop-figwheel`.
+
 
 ### Production mode
 
