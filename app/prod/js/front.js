@@ -19583,7 +19583,7 @@ app_front.conf.setting = new cljs.core.PersistentArrayMap(null, 1, [new cljs.cor
 app_front.core = {};
 "undefined" === typeof app_front.core.app_state && (app_front.core.app_state = cljs.core.atom.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "message", "message", -406056002), "Xecle: rethinking spreadsheet"], null)));
 app_front.core.mount_root = function(a) {
-  a = document.getElementById("app");
+  a = document.getElementById("sheet");
   return Handsontable(a, {data:[[]], minRows:32, minCols:12, rowHeaders:!0, colHeaders:!0, stretchH:"all"});
 };
 app_front.core.init_BANG_ = function(a) {

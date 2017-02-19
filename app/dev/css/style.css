@@ -1395,7 +1395,13 @@ body {
   background-color: #1B1B1B;
   overflow: hidden;
 }
-#app {
+td#spreadsheet {
+  width: 50%;
+}
+td#editor {
+  width: 50%;
+}
+#sheet {
   width: 100%;
 }
 .ht_master tr td,

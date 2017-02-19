@@ -7,7 +7,7 @@ if(typeof app_front.core.app_state !== 'undefined'){
 app_front.core.app_state = cljs.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"message","message",-406056002),"Xecle: rethinking spreadsheet"], null));
 }
 app_front.core.mount_root = (function app_front$core$mount_root(setting){
-var app = document.getElementById("app");
+var app = document.getElementById("sheet");
 var spreadsheet = [[]];
 var table_options = (function (){var obj9584 = {"data":spreadsheet,"minRows":(32),"minCols":(12),"rowHeaders":true,"colHeaders":true,"stretchH":"all"};
 return obj9584;

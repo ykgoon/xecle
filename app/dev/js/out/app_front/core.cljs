@@ -4,7 +4,7 @@
 (defonce app-state (atom {:message "Xecle: rethinking spreadsheet"}))
 
 (defn mount-root [setting]
-  (let [app (. js/document (getElementById "app"))
+  (let [app (. js/document (getElementById "sheet"))
         spreadsheet (array (array))
         table-options (js-obj "data" spreadsheet
                               "minRows" 32
