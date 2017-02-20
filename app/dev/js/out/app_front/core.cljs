@@ -1,12 +1,14 @@
 (ns app-front.core
-  (:require cljsjs.handsontable))
+  (:require [cljsjs.handsontable]
+            [cljsjs.codemirror]
+            [cljsjs.mui]))
 
 (defonce app-state (atom {:message "Xecle: rethinking spreadsheet"}))
 
 (defn mount-root [setting]
   (let [app (. js/document (getElementById "sheet"))
-        spreadsheet (array (array))
-        table-options (js-obj "data" spreadsheet
+        sheet-data (array (array))
+        table-options (js-obj "data" sheet-data
                               "minRows" 32
                               "minCols" 12
                               "rowHeaders" true
