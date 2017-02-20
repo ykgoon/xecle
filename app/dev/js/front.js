@@ -3,8 +3,10 @@ goog.addDependency("../cljs/core.js", ['cljs.core'], ['goog.string', 'goog.objec
 goog.addDependency("../app_front/conf.js", ['app_front.conf'], ['cljs.core']);
 goog.addDependency("../codemirror.inc.js", ['cljsjs.codemirror'], []);
 goog.addDependency("../handsontable.full.inc.js", ['cljsjs.handsontable'], []);
+goog.addDependency("../javascript.inc.js", ['cljsjs.codemirror.mode.javascript'], ['cljsjs.codemirror']);
 goog.addDependency("../mui.inc.js", ['cljsjs.mui'], []);
-goog.addDependency("../app_front/core.js", ['app_front.core'], ['cljs.core', 'cljsjs.codemirror', 'cljsjs.handsontable', 'cljsjs.mui']);
+goog.addDependency("../emacs.inc.js", ['cljsjs.codemirror.keymap.emacs'], ['cljsjs.codemirror']);
+goog.addDependency("../app_front/core.js", ['app_front.core'], ['cljs.core', 'cljsjs.codemirror', 'cljsjs.handsontable', 'cljsjs.codemirror.mode.javascript', 'cljsjs.mui', 'cljsjs.codemirror.keymap.emacs']);
 goog.addDependency("../cljs/core/async/impl/protocols.js", ['cljs.core.async.impl.protocols'], ['cljs.core']);
 goog.addDependency("../cljs/core/async/impl/buffers.js", ['cljs.core.async.impl.buffers'], ['cljs.core', 'cljs.core.async.impl.protocols']);
 goog.addDependency("../cljs/core/async/impl/dispatch.js", ['cljs.core.async.impl.dispatch'], ['cljs.core', 'cljs.core.async.impl.buffers', 'goog.async.nextTick']);

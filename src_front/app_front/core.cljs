@@ -1,6 +1,8 @@
 (ns app-front.core
   (:require cljsjs.handsontable
             cljsjs.codemirror
+            cljsjs.codemirror.mode.javascript
+            cljsjs.codemirror.keymap.emacs
             cljsjs.mui))
 
 (defonce app-state (atom {:message "Xecle: rethinking spreadsheet"}))

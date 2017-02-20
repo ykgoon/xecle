@@ -3,6 +3,8 @@ goog.provide('app_front.core');
 goog.require('cljs.core');
 goog.require('cljsjs.handsontable');
 goog.require('cljsjs.codemirror');
+goog.require('cljsjs.codemirror.mode.javascript');
+goog.require('cljsjs.codemirror.keymap.emacs');
 goog.require('cljsjs.mui');
 if(typeof app_front.core.app_state !== 'undefined'){
 } else {
