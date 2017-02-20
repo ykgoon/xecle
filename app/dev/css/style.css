@@ -1790,4 +1790,7 @@ body {
 .ht_master tr th {
   background-color: #1B1B1B;
 }
+.CodeMirror-lorem {
+  height: auto;
+}
 /*# sourceMappingURL=style.main.css.map */

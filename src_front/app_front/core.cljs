@@ -22,7 +22,8 @@
         options (js-obj "mode"  "javascript"
                         "lineNumbers" true
                         "theme" "lesser-dark")]
-    (js/CodeMirror editor options)))
+    (let [codeMirror (js/CodeMirror editor options)]
+      (.refresh codeMirror))))
 
 (defn init! [setting]
   (mount-root setting))
