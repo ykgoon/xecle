@@ -21083,10 +21083,19 @@ app_front.conf.setting = new cljs.core.PersistentArrayMap(null, 1, [new cljs.cor
 app_front.core = {};
 "undefined" === typeof app_front.core.app_state && (app_front.core.app_state = cljs.core.atom.call(null, new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "message", "message", -406056002), "Xecle: rethinking spreadsheet"], null)));
 app_front.core.mount_root = function(a) {
-  a = document.getElementById("sheet");
-  Handsontable(a, {data:[[]], minRows:32, minCols:12, rowHeaders:!0, colHeaders:!0, stretchH:"all"});
+  var b = document.getElementById("sheet"), c = b.parentNode, d = c.getBoundingClientRect().width;
+  a = cljs.core.nth.call(null, document.getElementsByTagName("body"), 0);
+  var e = {data:[[]], width:d, height:240, minRows:32, minCols:14, rowHeaders:!0, colHeaders:!0, stretchH:"all"}, f = Handsontable(b, e), b = function(a, b, c, d, e, f, p) {
+    return function() {
+      var b = {width:a.parentNode.getBoundingClientRect().width, height:360};
+      p.updateSettings(b);
+      return p.render();
+    };
+  }(b, c, d, a, 240, e, f);
+  console.log(a);
+  window.addEventListener("resize", b);
   a = document.getElementById("editor");
-  return CodeMirror(a, {mode:"javascript", lineNumbers:!0, theme:"lesser-dark", height:"auto"}).refresh();
+  return CodeMirror(a, {mode:"javascript", lineNumbers:!0, theme:"lesser-dark"}).refresh();
 };
 app_front.core.init_BANG_ = function(a) {
   return app_front.core.mount_root.call(null, a);

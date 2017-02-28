@@ -37,9 +37,13 @@
             "descjop-externs-prod" ["do"
                                     ["externs" "prod-main" "app/prod/js/externs.js"]
                                     ["externs" "prod-front" "app/prod/js/externs_front.js"]]
-            "descjop-figwheel" ["pdo"
-                                ["shell" "electron" "app/dev"]
-                                ["figwheel" "dev-front"]]
+            "descjop-figwheel" ["do"
+                                ["cljsbuild" "once" "dev-main"]
+                                ["cljsbuild" "once" "dev-front"]
+                                ["less4j" "once"]
+                                ["pdo"
+                                 ["shell" "electron" "app/dev"]
+                                 ["figwheel" "dev-front"]]]
             "descjop-once" ["do"
                             ["cljsbuild" "once" "dev-main"]
                             ["cljsbuild" "once" "dev-front"]

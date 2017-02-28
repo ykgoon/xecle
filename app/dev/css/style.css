@@ -1784,13 +1784,13 @@ body {
   overflow: hidden;
 }
 #sheet {
-  width: 100%;
+  overflow: hidden;
 }
 .ht_master tr td,
 .ht_master tr th {
   background-color: #1B1B1B;
 }
-.CodeMirror-lorem {
+.CodeMirror {
   height: auto;
 }
 /*# sourceMappingURL=style.main.css.map */
