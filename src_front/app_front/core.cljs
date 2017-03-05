@@ -12,10 +12,7 @@
 
         spreadsheet-container (aget spreadsheet "parentNode")
         width (aget (.getBoundingClientRect spreadsheet-container) "width")
-
-        body (. js/document (getElementsByTagName "body"))
-        ;; height (aget (.getBoundingClientRect body "height"))
-        height 240
+        height 640
 
         options (js-obj "data" (array (array))
                         "width" width
@@ -28,9 +25,8 @@
         sheet (js/Handsontable spreadsheet options)
 
         resize (fn []
-                 (let [spreadsheet-container (aget spreadsheet "parentNode")
-                       width (aget (.getBoundingClientRect spreadsheet-container) "width")
-                       height 360
+                 (let [width (aget (.getBoundingClientRect spreadsheet-container) "width")
+                       height (aget (.getBoundingClientRect spreadsheet-container) "height")
                        sheet-settings (js-obj "width" width
                                               "height" height)]
                    (.updateSettings sheet sheet-settings)
