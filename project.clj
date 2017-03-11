@@ -48,7 +48,8 @@
                             ["cljsbuild" "once" "dev-main"]
                             ["cljsbuild" "once" "dev-front"]
                             ["cljsbuild" "once" "prod-main"]
-                            ["cljsbuild" "once" "prod-front"]]
+                            ["cljsbuild" "once" "prod-front"]
+                            ["less4j" "once"]]
             "descjop-once-dev" ["do"
                                 ["cljsbuild" "once" "dev-main"]
                                 ["cljsbuild" "once" "dev-front"]
@@ -122,13 +123,13 @@
                                               ;; no optimize compile (dev)
                                               ;;:optimizations :none
                                               ;; when no optimize uncomment
-                                              ;;:output-dir "app/prod/js/out"
+                                              ;; :output-dir "app/prod/js/out"
 
                                               ;; simple compile (dev)
-                                              :optimizations :simple
+                                              ;;:optimizations :simple
 
                                               ;; advanced compile (prod)
-                                              ;;:optimizations :advanced
+                                              :optimizations :advanced
 
                                               ;;:source-map "app/prod/js/test.js.map"
                                               :pretty-print true
@@ -149,18 +150,19 @@
                                                ;;:output-dir "app/prod/js/out"
 
                                                ;; simple compile (dev)
-                                               :optimizations :simple
+                                               ;; :optimizations :simple
 
                                                ;; advanced compile (prod)
-                                               ;;:optimizations :advanced
+                                               :optimizations :advanced
 
                                                ;;:source-map "app/prod/js/test.js.map"
                                                :pretty-print true
                                                :output-wrapper true}}}}
-  :less {:source-paths  ["resources/public/css"]
-         :target-path   "app/dev/css"
+  :less {:source-paths ["resources/public/css"]
+         :target-path "app/dev/css"
          :source-map false
          :compression false}
+
   :figwheel {:http-server-root "public"
              :ring-handler figwheel-middleware/app
              :server-port 3449
