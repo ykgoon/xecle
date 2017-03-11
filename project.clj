@@ -159,7 +159,8 @@
                                                :output-wrapper true}}}}
   :less {:source-paths  ["resources/public/css"]
          :target-path   "app/dev/css"
-         :source-map true}
+         :source-map false
+         :compression false}
   :figwheel {:http-server-root "public"
              :ring-handler figwheel-middleware/app
              :server-port 3449
