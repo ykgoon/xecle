@@ -52,11 +52,13 @@
                             ["less4j" "once"]]
             "descjop-once-dev" ["do"
                                 ["change" "less" "update" ":target-path" "str" "\"app/dev/css\""]
+                                ["change" "less" "update" ":compression" "str" "false"]
                                 ["cljsbuild" "once" "dev-main"]
                                 ["cljsbuild" "once" "dev-front"]
                                 ["less4j" "once"]]
             "descjop-once-prod" ["do"
                                  ["change" "less" "update" ":target-path" "str" "\"app/prod/css\""]
+                                 ["change" "less" "update" ":compression" "str" "true"]
                                  ["cljsbuild" "once" "prod-main"]
                                  ["cljsbuild" "once" "prod-front"]
                                  ["less4j" "once"]]}
@@ -160,7 +162,7 @@
                                                ;;:source-map "app/prod/js/test.js.map"
                                                :pretty-print true
                                                :output-wrapper true}}}}
-  :less {:source-paths ["resources/public/css"], :target-path "app/dev/css", :source-map false, :compression false}
+  :less {:source-paths ["resources/public/css"], :target-path "app/prod/css", :source-map false, :compression true}
 
   :figwheel {:http-server-root "public"
              :ring-handler figwheel-middleware/app
