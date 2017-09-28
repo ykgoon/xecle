@@ -8,11 +8,12 @@ Xecle is about rethinking how spreadsheet works.
 ### Setup
 
 1. Install [*leiningen*](https://leiningen.org/#install)
-2. `pip install nodeenv`
-3. `. env/bin/active`
-4. `npm install electron -g --save-dev`
-5. `lein deps`
-6. `lein descjop-externs`
+2. Install *python-pip*
+3. `pip install nodeenv`
+4. `. env/bin/active`
+5.. `npm install electron -g --save-dev`
+6. `lein deps`
+7. `lein descjop-externs`
 
 
 ### Development mode
